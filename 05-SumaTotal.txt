@@ -1,0 +1,32 @@
+5- Crear un programa utilizando la recursividad para obtener la suma total de números, estos son almacenados en un acumulador, mostrar la suma total cuando el usuario capture el valor de 0.
+-----------------------------
+
+import java.util.Scanner;
+
+class Main {
+    public static Scanner sc = new Scanner(System.in);
+    
+    public static int base = 1;
+    public static int totalInit = 0;
+    
+    public static void main(String[] args){
+        int acumulacion = sumTotal( totalInit, base ); 
+        System.out.println("[Suma total es] => " + acumulacion);
+    }
+    
+    public static int sumTotal(int total, int n){
+        
+        System.out.println("Ingrese el numero: ");
+        n = sc.nextInt();
+        
+        if (n == 0){
+           
+            return total;
+        }
+        total += n;
+        return sumTotal(total, n);
+
+    }
+}
+
+-----------------------------

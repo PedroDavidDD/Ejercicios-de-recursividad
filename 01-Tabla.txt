@@ -1,0 +1,28 @@
+1- Crea un programa donde se pida en el principal la tabla de multiplicar deseada, en un método recursivo generar la tabla de multiplicar. Se multiplicara hasta querer llegar al numero 12 como resultado. El formato de salida es el siguiente:
+5 x 1 = 5
+5 x 2 = 10
+-----------------------------
+
+import java.util.Scanner;
+public class Main {
+
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ 
+ System.out.println("Ingresa el valor de la tabla a mostrar");
+ int num = sc.nextInt();
+ 
+ System.out.println("[ TABLE " + num+" ]");
+ tableMult( num, 1 );
+ }
+ 
+ public static void tableMult(int num, int i) {
+ if ((num*i) > 12){
+ return;
+ }
+ System.out.println(num+" X "+ i + " = " + num * i);
+ tableMult(num, i+1) ; 
+ }
+}
+
+-----------------------------

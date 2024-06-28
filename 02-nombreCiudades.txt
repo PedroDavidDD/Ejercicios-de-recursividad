@@ -1,0 +1,29 @@
+2- Crea un programa donde ingreses 10 nombres de ciudades, y en un método recursivo muestra las ciudades al reves (es decir del ultimo al primero)
+-----------------------------
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static String cities[] = new String[10];
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        for (int i = 0; i < 10; i++){
+            System.out.println("ingrese 10 nombre de ciudades: "+(i+1));
+            cities[i] = sc.next();
+        }
+    getReverseRecursive(cities.length -1);
+    }
+    public static void getReverseRecursive(int n){
+        if (n < 0){
+         return;   
+        }
+        
+        System.out.println("Cities: "+ cities[n]);
+        
+        getReverseRecursive(n-1);
+    }
+}
+
+-----------------------------

@@ -1,0 +1,29 @@
+4- Crea un programa donde se pida el nombre de una persona en el principal y en un método recursivo mostrarlo de forma inversa.
+-----------------------------
+
+import java.util.Scanner;
+
+public class Main {
+    public static String nombre;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("ingresar nombre: ");
+        nombre = sc.next();
+        System.out.print("Nombre formato inversa: ");
+        reverseNombre( nombre.split("").length - 1 );
+    }
+    
+    public static void reverseNombre(int queryList){
+        String[] toStringFromArray = nombre.split("");
+        
+        if(queryList < 0){
+            return;
+        }
+        System.out.print(toStringFromArray[ queryList ]);
+        reverseNombre( queryList - 1);
+        
+    }
+}
+
+-----------------------------

@@ -1,0 +1,39 @@
+3- Crea un programa donde ingreses en un método recursivo la captura de numeros, esto son almacenados en un arreglo, la recursividad termina cuando el usuario ingrese el numero -1, al termino del mismo, muestra los valores capturados en el mismo método
+-----------------------------
+
+package Recursividad;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner sc = new Scanner(System.in);
+    public static ArrayList numberList = new ArrayList();
+    public static void main(String[] args) {
+        
+        System.out.println(" números a guardar:");
+        inputNumberToArrayList();
+        
+    }
+    
+    public static void inputNumberToArrayList(){
+        System.out.println("Ingresar número a guardar:");
+        int num = sc.nextInt();
+        
+        if (num == (-1)){
+            
+            System.out.println("Valores de ArrayList: ");
+            for (int i = 0; i < numberList.size(); i++){
+                System.out.println("[ "+numberList.get(i)+" ]");
+            }
+            
+            return;
+        }else{
+            numberList.add(num);
+            inputNumberToArrayList();
+        }
+        
+    }
+    
+}
+
+-----------------------------
