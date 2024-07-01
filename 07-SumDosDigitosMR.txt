@@ -1,0 +1,28 @@
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3,5,6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+----------------------------------------------------------------
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        // Suma de multiplos | valorInicial-SumTotal-multpl-limite
+        int m1 = doMultiple( 0,0,3,5,1000 );
+        System.out.println( "[ Suma de Multiplos de 3 y 5 ]: " + m1);
+    
+    }
+    
+    public static int doMultiple( int initValue, int sumTotal, int multiplo1, int multiplo2, int limite ){
+        
+        if ( ( initValue % multiplo1 != 0) && ( initValue % multiplo2 != 0)) {
+            return doMultiple( initValue+1, sumTotal, multiplo1, multiplo2, limite );
+        }
+        
+        if ( initValue >= limite ) {
+            return sumTotal;
+        }
+        sumTotal += initValue;
+        return doMultiple( initValue+1, sumTotal, multiplo1, multiplo2, limite );
+    }
+    
+}

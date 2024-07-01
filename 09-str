@@ -1,0 +1,40 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        detectar_fac();
+       
+    }
+    
+    public static void detectar_fac(){
+        int maxPalindromo = 0;
+        int factor1 = 0;
+        int factor2 = 0;
+        
+        for ( int i = 999; i >= 100 ; i-- ) {
+            for ( int j = i; j >= 100 ; j-- ) {
+                //999 x 100
+                //999 x 101
+                int prod = i*j;
+                if ( palindromo(prod) && (prod > maxPalindromo) ){
+                    maxPalindromo = prod;
+                    factor1 = i;
+                    factor2 = j;
+                }
+                
+            }
+            
+        }
+        System.out.println(factor1);
+        System.out.println(factor2);
+        System.out.println(maxPalindromo);
+    }
+    
+    public static boolean palindromo(int num) {
+        String str = Integer.toString(num);
+        String reverNumberStr = new StringBuilder(str).reverse().toString();
+        
+        return str.equals(reverNumberStr);
+    }
+}

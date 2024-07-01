@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        // Suma de multiplos | valorInicial-SumTotal-multpl-limite
+        int m1 = doMultiple( 0,0,3,10 );
+        System.out.println( "Suma de Multiplos de 3: " + m1);
+    
+    }
+    
+    public static int doMultiple( int initValue, int sumTotal, int multiplo, int limite ){
+        
+        if ( initValue % multiplo != 0) {
+            return doMultiple( initValue+1, sumTotal, multiplo, limite );
+        }
+        
+        if ( initValue >= limite ) {
+            return sumTotal;
+        }
+        
+        sumTotal += initValue;
+        return doMultiple( initValue+1, sumTotal, multiplo, limite );
+    }
+    
+}

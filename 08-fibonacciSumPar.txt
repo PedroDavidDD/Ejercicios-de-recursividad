@@ -1,0 +1,19 @@
+
+class HelloWorld {
+    public static void main(String[] args) {
+        fibonacciSumParRecursive(1,2,4000000,0);
+    }
+    
+    public static void fibonacciSumParRecursive(int a, int b, int limit, int sum_even){
+        
+        if ( a > limit ){
+            System.out.println(sum_even);
+            return;
+        }
+        if ( a % 2 == 0 ){
+            sum_even += a;
+        }
+        
+        fibonacciSumParRecursive(b, (a + b), limit, sum_even);
+    }
+}
