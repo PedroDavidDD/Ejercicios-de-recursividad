@@ -1,0 +1,17 @@
+function encontrarDosNumeros(listNumber, objetivo) {
+    const [ num, ...rest ] = listNumber
+  
+    const complement = objetivo - num;
+    if (rest.includes(complement))
+        return [ num, complement ]
+    else
+        return (rest.length > 1) ? encontrarDosNumeros(rest, objetivo) : `No existe numero que sumen el ${objetivo}`; 
+  }
+  
+  // Ejemplo de uso
+  const resultado = encontrarDosNumeros([1, 3, 2], 3);
+  console.log(resultado); // Salida: [1, 2] (valores de los números)
+
+  const resultado2 = encontrarDosNumeros([6,1,10,15,12,15], 9);
+  console.log(resultado2); // Salida: Message
+  
