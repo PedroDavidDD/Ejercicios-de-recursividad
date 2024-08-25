@@ -59,14 +59,13 @@ const tablaHomofonos = {
   function cifrar(texto) {
     let textoCifrado = '';
     for (const letra of texto) {
-      const letraMinuscula = letra;
       // if (tablaHomofonos.hasOwnProperty(letraMinuscula)) {
-      if (Object.keys(tablaHomofonos).includes(letraMinuscula)) {
-        const homofonos = tablaHomofonos[letraMinuscula];
+      if (Object.keys(tablaHomofonos).includes(letra)) {
+        const homofonos = tablaHomofonos[letra];
         const homofonoAleatorio = homofonos[Math.floor(Math.random() * homofonos.length)];
         textoCifrado += homofonoAleatorio + ' '; 
       } else {
-        textoCifrado += `${letra} `; 
+        textoCifrado += `${letra} `;
       }
       
     }
@@ -95,15 +94,10 @@ const tablaHomofonos = {
   }
   
   // Ejemplo de uso
-  const mensajeOriginal = "o!a u5¢ZÛo!g@u";
+  const mensajeOriginal = "m@a m!a ! 1";
   const mensajeCifrado = cifrar(mensajeOriginal);
   const mensajeDescifrado = descifrar(mensajeCifrado);
   
   console.log("Mensaje original: " + mensajeOriginal);
   console.log("Mensaje cifrado: " + mensajeCifrado);
   console.log("Mensaje descifrado: " + mensajeDescifrado);
-  /* 
-    Mensaje original: o!a uZo!g@u
-    Mensaje cifrado: 12 ! 03 # 11 Z 12 ! g @ 09 
-    Mensaje descifrado: o!a uZo!g@u
-  */
