@@ -53,6 +53,9 @@ const tablaHomofonos = {
   'X': ['151', '152', '153'], 
   'Y': ['154', '155', '156'], 
   'Z': ['157', '158', '159'],
+  '1': ["160", "161", "162"],
+  '🤓': ["777", "333"],
+  '☝': ["111", "222"],
   ' ': ['~', "Ñ", "ö"], 
 };
   
@@ -94,7 +97,7 @@ const tablaHomofonos = {
   }
   
   // Ejemplo de uso
-  const mensajeOriginal = "m@a m!a ! 1";
+  const mensajeOriginal = "m@a m!a ! 1 ☝🤓";
   const mensajeCifrado = cifrar(mensajeOriginal);
   const mensajeDescifrado = descifrar(mensajeCifrado);
   
